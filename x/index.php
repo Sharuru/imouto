@@ -25,6 +25,3 @@ if(isset($_GET['cb'])&&preg_match('/^[\w_\-\.$]{1,200}$/',$_GET['cb'])){
 
 	exit(json_encode($r));
 }
-
-
-
