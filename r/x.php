@@ -2,7 +2,6 @@
 
 function err($i)
 {
-    //exit($i);
     header('Content-type: application/json;charset=utf-8');
     header('Access-Control-Allow-Origin: *');
     exit(json_encode(array('error' => $i)));
