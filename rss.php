@@ -1,8 +1,5 @@
 <?php
 
-if(defined('SAE_MYSQL_DB'))
-	$sql=new SaeMysql();
-else
 	require 'x/mysql.class.php';
 
 
