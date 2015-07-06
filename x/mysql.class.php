@@ -59,7 +59,7 @@ class MySQLConnection
      * 运行Sql,返回结果集第一条记录的第一个字段值
      *
      * @param string $sql
-     * @return mixxed 成功时返回一个值，失败时返回false
+     * @return mixed 成功时返回一个值，失败时返回false
      */
     public function getVar($sql)
     {
