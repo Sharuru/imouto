@@ -1,11 +1,4 @@
--- phpMyAdmin SQL Dump
--- version 3.3.8.1
--- http://www.phpmyadmin.net
---
--- 主机: w.rdc.sae.sina.com.cn:3307
--- 生成日期: 2014 年 11 月 15 日 00:08
--- 服务器版本: 5.5.27
--- PHP 版本: 5.3.3
+-- 数据表结构应该在一开始就被导入
 
 SET SQL_MODE="NO_AUTO_VALUE_ON_ZERO";
 
@@ -16,16 +9,16 @@ SET SQL_MODE="NO_AUTO_VALUE_ON_ZERO";
 /*!40101 SET NAMES utf8 */;
 
 --
--- 数据库: `app_mouto`
+-- 数据库: `blogdb`
 --
 
 -- --------------------------------------------------------
 
 --
--- 表的结构 `imouto_article`
+-- 表的结构 `blog_article`
 --
 
-CREATE TABLE IF NOT EXISTS `imouto_article` (
+CREATE TABLE IF NOT EXISTS `blog_article` (
   `pid` int(10) unsigned NOT NULL AUTO_INCREMENT,
   `title` varchar(200) DEFAULT NULL,
   `created` int(10) unsigned DEFAULT '0',
@@ -42,10 +35,10 @@ CREATE TABLE IF NOT EXISTS `imouto_article` (
 -- --------------------------------------------------------
 
 --
--- 表的结构 `imouto_comments`
+-- 表的结构 `blog_comments`
 --
 
-CREATE TABLE IF NOT EXISTS `imouto_comments` (
+CREATE TABLE IF NOT EXISTS `blog_comments` (
   `cid` int(10) unsigned NOT NULL AUTO_INCREMENT,
   `pid` int(10) unsigned DEFAULT '0',
   `created` int(10) unsigned DEFAULT '0',

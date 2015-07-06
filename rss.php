@@ -6,7 +6,7 @@ else
 	require 'x/mysql.class.php';
 
 
-$list=$sql->getData('SELECT * FROM imouto_article ORDER BY created DESC LIMIT 0,15');
+$list=$sql->getData('SELECT * FROM blog_article ORDER BY created DESC LIMIT 0,15');
 
 
 $h='<?xml version="1.0" encoding="UTF-8"?>'."\n".
