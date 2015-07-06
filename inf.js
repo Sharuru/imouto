@@ -1,7 +1,6 @@
 var INF = {
     url: 'http:/localhost/',
     u: [
-        'Sharuru',
         'Honoka',
         'Umi',
         'Kotori',
