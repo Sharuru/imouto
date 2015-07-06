@@ -655,7 +655,7 @@ if (typeof exports === "object" && typeof require === "function") {
     }
 })();
 
-iTorr.ex = function (i) {
+iBlog.ex = function (i) {
     return i.replace(/```(|[\w]+)[\r\n]+([\W.\S]*?)```/mg, function (i, a, b) {
         return '<pre><code class="' + a + '">' + b.replace(/&/g, "&amp;").replace(/</g, "&lt;").replace(/>/g, "&gt;").replace(/\'/g, "&#39;").replace(/\"/g, "&quot;") + '</code></pre>'
     }).replace(/(^|[^\"\'\]>])(http\:\/\/ww[0-9]{1}\.sinaimg\.cn\/)([\w]{4,10})(\/[\w]{16,32})(|\.gif|\.jpg|\.jpeg)/g, "<img src=\"$2mw1024$4$5\">")

@@ -262,4 +262,4 @@ Q=function($,win,doc){
 			}
 		},100);
 	return Q
-}(iTorr,window,document);
+}(iBlog,window,document);

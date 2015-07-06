@@ -1,4 +1,4 @@
-var iTorr = function (a, c, b) {
+var iBlog = function (a, c, b) {
     if (!a.localStorage || !a.XMLHttpRequest) {
         return c.getElementsByTagName("body")[0].innerHTML = "<p class=loading>请更新至现代浏览器。";
     }
@@ -118,7 +118,7 @@ var iTorr = function (a, c, b) {
     return b;
 }(window, document);
 if (!window.$) {
-    $ = iTorr;
+    $ = iBlog;
 }
 W = function (b, a) {
     return {

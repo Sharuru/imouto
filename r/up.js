@@ -74,4 +74,4 @@ var UP = function ($) {
         f();
     };
 
-}(iTorr);
+}(iBlog);

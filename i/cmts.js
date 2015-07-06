@@ -1,4 +1,4 @@
-iTorr.ua = function (a) {
+iBlog.ua = function (a) {
     a = a || navigator.userAgent;
     return a.match(/Windows Phone/i) ? "Mango" : a.match(/Windows CE/i) ? "winCE" : a.match(/ipad/i) ? "iPad" : a.match(/iPod/i) ? "Touch" : a.match(/iphone/i) ? "iPhone" : a.match(/android/i) ? "Android" : a.match(/Ubuntu/i) ? "Ubuntu" : a.match(/Mac OS X/i) ? "Mac OS X" : a.match(/360/i) ? "Shit!" : a.match(/opera minf/i) ? "Opera mini" : a.match(/Chrome/i) ? "Cr" : a.match(/Safarf/i) ? "Safari" : a.match(/Opera/i) ? "Opera" : a.match(/UCWEB/i) ? "UC" : a.match(/PHP/i) ? "PHP" : "";
 };
@@ -98,4 +98,4 @@ var cmt = function (b) {
             });
         }
     };
-}(iTorr);
+}(iBlog);

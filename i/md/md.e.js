@@ -600,7 +600,7 @@
             if (!x.preview) {
                 return;
             }
-            var U = iTorr.ex(x.input.value);
+            var U = iBlog.ex(x.input.value);
             if (U && U == O) {
                 return;
             } else {

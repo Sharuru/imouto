@@ -104,7 +104,7 @@
 
 
 <script>var $ = {}</script>
-<script src="../i/iTorr.m.js"></script>
+<script src="../i/m.js"></script>
 <script src="../i/md/md.js"></script>
 <script src="../i/md/md.e.js"></script>
 <script>
@@ -116,7 +116,6 @@
 
         // 自动跟随
         converter.hooks.chain('postConversion', function (html) {
-            // clear special html tags
 
             html = html.replace(/<\/?(\!doctype|html|head|body|link|title|input|select|button|textarea|style|noscript)[^>]*>/ig, function (all) {
                 return all.replace(/&/g, '&amp;')
