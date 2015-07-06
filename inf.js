@@ -1,5 +1,5 @@
 var INF = {
-    url: 'http:/localhost/',
+    url: 'http://localhost/',
     u: [
         'Honoka',
         'Umi',

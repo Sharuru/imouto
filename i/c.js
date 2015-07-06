@@ -228,11 +228,6 @@ Q=function($,win,doc){
 			location.hash='#!home';	
 			return;
 		}
-		/*
-
-		($('#h a.a')||M).className='';
-		($('#h a[href="#'+L[0]+'"]')||M).className='a';
-		*/
 
 		if(lash.match(ER)!=L[0]){
 			M.style.cssText='transition:none';

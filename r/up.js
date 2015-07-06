@@ -31,7 +31,6 @@ var UP = function ($) {
             f = function () {
 
                 var file = files[now];
-                //console.log(file);
                 if (file.type.indexOf('image') != 0) {
                     alert('这不是一个图像或音频！');
                     return;
@@ -58,8 +57,6 @@ var UP = function ($) {
                         I.onkeydown();
 
                         $.css(pace, 'width:0;');
-
-                        //$.D.d(pace);
 
                         now++;
 
