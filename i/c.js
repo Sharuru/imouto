@@ -159,11 +159,6 @@ Q=function($,win,doc){
 						$.j('i/cmts.js',function(){
 							cmt.load(i);
 						});
-				}else{
-					if(window.DS&&DS.load)
-						DS.load();
-					else
-						$.j('i/DS.js');
 				}
 
 				if($('pre code')){
