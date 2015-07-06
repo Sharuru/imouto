@@ -27,10 +27,7 @@
         undo: "撤销 - Ctrl+Z",
         redo: "重做 - Ctrl+Y",
         redomac: "重做 - Ctrl+Shift+Z",
-        fullscreen: "全屏 - Ctrl+J",
-        exitFullscreen: "退出全屏 - Ctrl+E",
-        fullscreenUnsupport: "此浏览器不支持全屏操作",
-        imagedialog: "<p><b>插入图片</b></p><p>请在下方的输入框内输入要插入的远程图片地址</p><p>您也可以使用编辑器下方的文件上传功能插入本地图片</p>",
+        imagedialog: "<p><b>插入图片</b></p><p>请在下方的输入框内输入要插入的远程图片地址</p>",
         linkdialog: "<p><b>插入链接</b></p><p>请在下方的输入框内输入要插入的链接地址</p>",
         ok: "确定",
         cancel: "取消",
@@ -1525,80 +1522,9 @@
         y.selection = "";
     };
     function r(y, x) {
-        this.fullScreenBind = false;
         this.hooks = y;
         this.getString = x;
-        this.isFakeFullScreen = false;
     }
 
-    function j() {
-        var z = {
-            fullScreenChange: ["onfullscreenchange", "onwebkitfullscreenchange", "onmozfullscreenchange", "onmsfullscreenchange"],
-            requestFullscreen: ["requestFullscreen", "webkitRequestFullScreen", "mozRequestFullScreen", "msRequestFullScreen"],
-            cancelFullscreen: ["cancelFullscreen", "exitFullScreen", "webkitCancelFullScreen", "mozCancelFullScreen", "msCancelFullScreen"]
-        }, B = {};
-        for (var x in z) {
-            var y = z[x].length, C = false;
-            for (var A = 0; A < y; A++) {
-                var D = z[x][A];
-                if ("undefined" != typeof(document[D]) || "undefined" != typeof(document.body[D])) {
-                    B[x] = D;
-                    C = true;
-                    break;
-                }
-            }
-            if (!C) {
-                return false;
-            }
-        }
-        return B;
-    }
 
-    function u() {
-        return document.fullScreen || document.mozFullScreen || document.webkitIsFullScreen || document.msIsFullScreen;
-    }
-
-    r.prototype.doFullScreen = function (A, x) {
-        var y = j(), z = this;
-        if (!y) {
-            alert(z.getString("fullscreenUnsupport"));
-            return false;
-        }
-        if (!this.fullScreenBind) {
-            a.addEvent(document, y.fullScreenChange.substring(2), function () {
-                if (!u()) {
-                    A.fullscreen.style.display = "";
-                    A.exitFullscreen.style.display = "none";
-                    z.hooks.exitFullScreen();
-                } else {
-                    A.fullscreen.style.display = "none";
-                    A.exitFullscreen.style.display = "";
-                    z.hooks.enterFullScreen();
-                }
-            });
-            this.fullScreenBind = true;
-        }
-        if (x) {
-            if (z.isFakeFullScreen) {
-                document.body[y.requestFullscreen]("webkitRequestFullScreen" == y.requestFullscreen ? Element.ALLOW_KEYBOARD_INPUT : null);
-                z.isFakeFullScreen = false;
-            } else {
-                if (!u()) {
-                    A.exitFullscreen.style.display = "";
-                    z.hooks.enterFakeFullScreen();
-                    z.isFakeFullScreen = true;
-                }
-            }
-        } else {
-            if (z.isFakeFullScreen) {
-                A.exitFullscreen.style.display = "none";
-                z.hooks.exitFullScreen();
-            } else {
-                if (u()) {
-                    document[y.cancelFullscreen]();
-                }
-            }
-            z.isFakeFullScreen = false;
-        }
-    };
 })();

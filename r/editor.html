@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <meta charset="UTF-8">
-<title>卜卜口</title>
+<title>在线编辑器</title>
 <link rel="stylesheet" href="../i/md/md.css">
 <style>
     body, textarea {
@@ -24,7 +24,7 @@
         box-sizing: border-box;
         border-radius: .5em;
         padding: 1em;
-        background: #FEC;
+        background: #CCCCCC;
     }
 
     .wmd-panel {
@@ -96,6 +96,7 @@
 </style>
 
 <form>
+    请记得在编辑后复制回原来的页面并再度确认页面格式！
     <div class="editor" id="wmd-button-bar"></div>
     <textarea id="text" name="text"></textarea>
 
@@ -152,7 +153,6 @@
         editor.hooks.chain('exitFullScreen', function () {
             /*高度适应*/
         });
-
         editor.run();
     }();
 </script>
