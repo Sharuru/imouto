@@ -173,17 +173,6 @@ Q=function($,win,doc){
 			var A;
 			if(A=$('#nav a.a'))
 				A.className='';
-
-			if(A=$('#nav a[href="#!vsco"]'))
-				A.className='a';
-
-			document.title='VSCO';
-			M.innerHTML='<div id="grid"><p class="loading"></p></div>\
-			<div class="VS-more"><div id="more"></div></div>\
-			<div id="showImg" class="hide"></div>';
-
-			$.lcss('i/vscam.css');
-			$.j('i/vscam.js');
 		}
 		
 	};
