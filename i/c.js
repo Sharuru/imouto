@@ -26,11 +26,6 @@ Q=function($,win,doc){
 			if(!c)
 				document.title=Title;
 			else{
-				/*
-				if(!INF.c[c])
-					return location.hash='#!home';
-	*/
-				//console.log(INF.c[c]);
 				document.title=INF.c[c][0]+' - '+INF.c[c][1];
 
 				if(A=$('#nav a[href="#!c/'+c+'"]'))
@@ -95,14 +90,10 @@ Q=function($,win,doc){
 
 				else
 					$('#more').innerHTML='<a href="#!home" class="more">查看最新文章…</a>';
-				//$('#m ')
-				//console.log(s);
 				if(s&&s.length)
 					window.scrollTo(0,$('#m').offsetTop);
 
 				$('.more').onclick=function(){
-					//window.scrollTo(0,560);
-					//window.scrollTo(0,500);
 				};
 				if($('pre code')){
 					$.lcss('i/md/monokai_sublime.css');
@@ -119,9 +110,7 @@ Q=function($,win,doc){
 			M.innerHTML='<p class="loading"></p>';
 
 			x('p','x/?a=p&id='+i,function(o){
-				o.h1=o.title.replace(/^(\s|)【.+】/,'');//'【'+INF.c[o.category][0]+'】'+
-
-				//document.title=o.h1||o.text.length<15?o.text:o.text.substr(0,15)+'...';
+				o.h1=o.title.replace(/^(\s|)【.+】/,'');
 				document.title=o.h1||'　-　';
 				if(i==0)
 					B=o.text;
@@ -132,7 +121,6 @@ Q=function($,win,doc){
 					else if(o.cover)
 						o.pic='http://ww2.sinaimg.cn/mw1024/'+o.cover;
 					o.html=C.makeHtml(!o.cover?$.ex(o.text)
-						//.replace(/<!--more-->/,'<a href="#!'+o.pid+'">查看更多…</a>')
 						.replace(/(<img.+src="|!\[.+\]\()http\:\/\/[0-9A-Za-z\/.#&!?%:;=_\-]+\.(?:gif|jpg|jpeg|png)(.+?>|\))/,''):$.ex(o.text));
 					
 				o.categoryName=INF.c[o.category][0];
