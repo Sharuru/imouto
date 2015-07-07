@@ -12,7 +12,7 @@ function err($i){
 $r=array();
 
 
-if(preg_match('/^(?:h|p|c|addc|test|t|s|stat)$/',$_GET['a']))
+if(preg_match('/^(?:h|p|c|addc|t)$/',$_GET['a']))
 	require 'x.'.$_GET['a'].'.php';
 
 
