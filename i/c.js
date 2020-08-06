@@ -134,7 +134,7 @@ Q=function($,win,doc){
 					o.html=C.makeHtml(!o.cover?$.ex(o.text)
 						//.replace(/<!--more-->/,'<a href="#!'+o.pid+'">查看更多…</a>')
 						.replace(/(<img.+src="|!\[.+\]\()http\:\/\/[0-9A-Za-z\/.#&!?%:;=_\-]+\.(?:gif|jpg|jpeg|png)(.+?>|\))/,''):$.ex(o.text));
-					
+
 				o.categoryName=INF.c[o.category][0];
 
 				var A;
@@ -194,7 +194,18 @@ Q=function($,win,doc){
 	};
  	Q.page=Q.home;
 
- 	$('#nav').innerHTML=Mustache.render($('#_nav_').innerHTML,function(){
+	if(INF.av!==''){$.css($('#av'),'display:block');$('#av').src = INF.av};
+	$('#na a').innerText = INF.n;
+
+	if (hitokoto.t)
+		$.x(hitokoto.api,function(d){
+			$('#t').innerText = d.text.enTxt()
+		})
+	else
+		$('#t').innerText = INF.t;
+
+
+	$('#nav').innerHTML=Mustache.render($('#_nav_').innerHTML,function(){
 		var c=[];
 		for(var i in INF.c)
 			if(i&&INF.c[i][1])
@@ -205,19 +216,14 @@ Q=function($,win,doc){
 				});
 		return {
 			c:c,
-			p:[/* 去掉这里的注释可以在 nav 上添加一项导航
-				{
-					name:'VSCO',
-					url:'#!vsco'
-				}
-			*/]
+			p:INF.p
 		}
 	}());
 
  	var Title=document.title//+=' - '+$('p').innerHTML;
 
 	var laHash='简直惨惨惨OAQ',popstate=function(){
-		
+
 		if('onhashchange' in win)win.onhashchange=popstate;
 
 		if(laHash==location.hash)
@@ -273,7 +279,7 @@ Q=function($,win,doc){
 				laHash=location.hash;
 			}
 		},100);
-	console.log('ヾ(≧∇≦)〃可能是世界最快博客 v2 @卜卜口<mouto.sinaapp.com> 2014/08/30');
+	console.log('\n %c ヾ(≧∇≦)〃可能是世界最快博客 v2 %c @卜卜口<mouto.sinaapp.com> 2014/08/30 \n\n','color:#444;background:#eee;padding:5px 0;border-top-left-radius:5px;border-bottom-left-radius:5px;', 'color:#eee;background:#444;padding:5px 0;border-top-right-radius:5px;border-bottom-right-radius:5px;');
 	/*这行注释的意义在于，愿看到代码的能保留上面一行 OAQ */
 	return Q
 }(iTorr,window,document);
